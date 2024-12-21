@@ -61,6 +61,20 @@ class UserProfileSerializer(serializers.ModelSerializer):
 
         instance.save()
         return instance
+    
+class TopCreatorSerializer(serializers.ModelSerializer):
+    project_count = serializers.IntegerField()
+    user = UserSerializer()
+    class Meta:
+        model = UserProfile
+        fields = ['user', 'desc', 'image', 'project_count']
+
+class TopInvestorSerializer(serializers.ModelSerializer):
+    total_investment = serializers.DecimalField(max_digits=10, decimal_places=2)
+    user = UserSerializer()
+    class Meta:
+        model = UserProfile
+        fields = ['user', 'desc', 'image', 'total_investment']
 
 
         

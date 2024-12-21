@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Project, Investment, Commentary, Image
+from .models import Project, Investment, Commentary, Image , Favorate
 from users.serializers import UserProfileSerializer
 
 
@@ -24,7 +24,7 @@ class InvestmentSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Investment
-        fields = ['id', 'investor', 'project', 'amount', 'created_at']
+        fields = ['id', 'investor', 'amount', 'created_at' ,'project']
 
 # Serializer pour Commentary
 class CommentarySerializer(serializers.ModelSerializer):
@@ -32,7 +32,13 @@ class CommentarySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Commentary
-        fields = ['id', 'user', 'text', 'created_at', 'image']
+        fields = ['id', 'user',  'text', 'created_at', 'image' ,'project']
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    project = ProjectSerializer(read_only=True)
+    class Meta:
+        model = Favorate
+        fields = ['id', 'user', 'project']
 
 
 

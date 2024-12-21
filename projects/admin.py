@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Project, Investment, Commentary,Image
+from .models import Project, Investment, Commentary,Image,Favorate
 
 
 class InvestmentInline(admin.TabularInline):
@@ -15,7 +15,6 @@ class CommentaryInline(admin.TabularInline):
 class ProjectImageInline(admin.TabularInline):
     model = Image
     extra = 1
-
 
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ['title', 'creator', 'category', 'goal_amount', 'raised_amount', 'isActive']
@@ -38,3 +37,5 @@ admin.site.register(Project, ProjectAdmin)
 admin.site.register(Investment, InvestmentAdmin)
 admin.site.register(Commentary, CommentaryAdmin)
 admin.site.register(Image)
+admin.site.register(Favorate)
+

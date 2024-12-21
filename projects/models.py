@@ -57,5 +57,13 @@ class Image(models.Model):
 
     def __str__(self):
         return f"Image for project: {self.project.title}"
+    
+
+class Favorate(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='favorate', null=False)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='favorate', null=False)
+
+    def __str__(self):
+        return f"{self.user.user.username} favarite in {self.project.title}"
 
 
