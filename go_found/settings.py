@@ -70,10 +70,7 @@ MIDDLEWARE = [
 
 ALLOWED_HOSTS = ['*'] 
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200',
-    'https://abdelwaheb11.github.io/go-found/'  
-]
+CORS_ALLOWED_ORIGINS = ['*']
 
 
 ROOT_URLCONF = 'go_found.urls'
