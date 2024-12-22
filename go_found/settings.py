@@ -68,17 +68,29 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ALLOWED_HOSTS = ['*'] 
+CORS_ALLOWED_ORIGINS = [
+    'https://abdelwaheb11.github.io',
+    'http://localhost:4200',
+]
 
-#CORS_ALLOWED_ORIGINS = [
-#   'https://abdelwaheb11.github.io',
-#   'http://localhost:4200'
-#]
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrf-token',
+    'x-requested-with',
+]
 
-
-CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = [
+    'https://abdelwaheb11.github.io',
+]
 
 
 ROOT_URLCONF = 'go_found.urls'
