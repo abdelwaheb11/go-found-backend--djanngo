@@ -28,6 +28,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['https://gofound.up.railway.app']
 
+
+
 AUTH_PASSWORD_VALIDATORS = []
 
 
@@ -74,7 +76,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://abdelwaheb11.github.io"
 ]
 
-
+CSRF_TRUSTED_ORIGINS = ['https://gofound.up.railway.app' , "http://localhost:4200"]
 
 
 ROOT_URLCONF = 'go_found.urls'
