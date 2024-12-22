@@ -71,7 +71,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://abdelwaheb11.github.io",
+    "*",
 ]
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
