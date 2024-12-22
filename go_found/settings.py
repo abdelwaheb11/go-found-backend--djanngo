@@ -72,12 +72,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
-    'https://abdelwaheb11.github.io'
-]
-
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    'contenttype',
-    'authorization',
+    "https://abdelwaheb11.github.io"
 ]
 
 
