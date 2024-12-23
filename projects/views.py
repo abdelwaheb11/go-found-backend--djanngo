@@ -52,7 +52,7 @@ class ProjectView(APIView):
     def post(self, request):
         try:
             # Vérifier si l'utilisateur est un créateur
-            user_profile = UserProfile.objects.get(user=request.user, role='creator')  
+            user_profile = UserProfile.objects.get(user=request.user)  
         except UserProfile.DoesNotExist:
             return Response({'detail': 'User is not a creator.'}, status=status.HTTP_403_FORBIDDEN)
 
